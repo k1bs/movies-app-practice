@@ -28,4 +28,15 @@ Movie.create = (movie, userId) => {
   )
 }
 
+Movie.update = (movie, id) => {
+  return db.one(
+    `UPDATE movies SET
+    title = $1,
+    description = $2,
+    genre = $3
+    WHERE id = $4
+    RETURNING *`,
+    [movie.title, movie.description, movie.genre, id])
+}
+
 module.exports = Movie
