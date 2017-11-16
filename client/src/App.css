@@ -1,3 +1,23 @@
+h1 {
+    margin-top: 30px;
+    font-family: 'Archivo Narrow', sans-serif;
+    font-size: 30px;
+    font-style: bold;
+    color: #FFFFFF;
+    justify-content: center;
+    margin-left: 20px;
+}
+
+h2 {
+    margin-top: 30px;
+    font-family: 'Archivo Narrow', sans-serif;
+    font-size: 30px;
+    font-style: bold;
+    color: #FFFFFF;
+    justify-content: center;
+    margin-left: 20px;
+}
+
 h3 {
     margin-top: 30px;
     font-family: 'Archivo Narrow', sans-serif;
@@ -48,6 +68,10 @@ nav {
     font-style:*/
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
 
 nav ul li {
   text-decoration: none;
@@ -83,6 +107,17 @@ footer {
 body {
     background: url('http://freshlycut.co.za/wp-content/uploads/2016/11/bg_demo.jpg') center center no-repeat fixed;
 
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+}
+
+.fill {
+  flex: 1;
 }
 
 .movie {
