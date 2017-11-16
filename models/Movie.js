@@ -39,4 +39,11 @@ Movie.update = (movie, id) => {
     [movie.title, movie.description, movie.genre, id])
 }
 
+Movie.destroy = (id) => {
+  return db.none(
+    `DELETE FROM movies
+    WHERE id = $1`,
+    [id])
+}
+
 module.exports = Movie
