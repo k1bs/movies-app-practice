@@ -1,6 +1,5 @@
 const express = require('express')
 const logger = require('morgan')
-const path = require('path')
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const session = require('express-session')
@@ -39,7 +38,8 @@ const authRoutes = require('./routes/auth-routes')
 app.use('/api/auth', authRoutes)
 const movieRoutes = require('./routes/movie-routes')
 app.use('/api/movies', movieRoutes)
-
+const favoriteRoutes = require('./routes/favorite-routes')
+app.use('/api/favorites', favoriteRoutes)
 
 app.use('*', (req, res) => {
   res.status(400).json({
