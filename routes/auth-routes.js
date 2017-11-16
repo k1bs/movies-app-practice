@@ -12,6 +12,7 @@ authRouter.post('/login', passport.authenticate('local', {
 }))
 
 authRouter.get('/verify', (req, res) => {
+  console.log(req.user)
   if (req.user) {
     return res.status(200).json({
       message: 'ok',
@@ -21,6 +22,7 @@ authRouter.get('/verify', (req, res) => {
       }
     })
   } else {
+    console.log(req.user)
     return res.status(400).json({
       message: 'Login failed',
       auth: false,

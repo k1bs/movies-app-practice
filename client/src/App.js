@@ -31,7 +31,7 @@ class App extends Component {
       credentials: 'include'
     }).then(res => res.json())
       .then(res => {
-        res.setState({
+        this.setState({
           auth: res.auth,
           user: res.data.user
         })
