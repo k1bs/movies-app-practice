@@ -53,6 +53,18 @@ class MovieList extends Component {
     }).catch(err => console.log(err))
   }
 
+  deleteMovie(id) {
+    fetch(`/api/movies/${id}`, {
+      method: 'DELETE',
+      credentials: 'include',
+    }).then(res => res.json())
+      .then(res => {
+        console.log(res);
+        this.getAllMovies();
+      }).catch(err => console.log(err))
+  }
+
+
   renderMovieList() {
     if (this.state.dataLoaded) {
       return this.state.movies.map(movie => {
