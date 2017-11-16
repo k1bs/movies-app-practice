@@ -12,4 +12,20 @@ Movie.findById = (id) => {
    WHERE id = $1`, [id])
 }
 
+Movie.findById = (id) => {
+  return db.oneOrNone(
+   `SELECT * FROM movies
+   WHERE id = $1`, [id])
+}
+
+Movie.create = (movie, userId) => {
+  return db.one(
+   `INSERT INTO movies (
+    title, description, genre, user_id)
+    VALUES ( $1, $2, $3, $4)
+    RETURNING *`,
+    [movie.title, movie.description, movie.genre, userId]
+  )
+}
+
 module.exports = Movie
