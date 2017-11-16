@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Link } from 'react-router-dom'
 
-function Header () {
+function Header (props) {
   return (
     <header>
       <nav>
@@ -12,6 +12,7 @@ function Header () {
           <li><Link to='/register'>Register</Link></li>
           <li><Link to='/dashboard'>Dashboard</Link></li>
           <li><Link to='/movies'>Movies</Link></li>
+          <li><span className='logout' onClick={props.logout}>Logout</span></li>
         </ul>
       </nav>
     </header>
