@@ -53,7 +53,8 @@ class App extends Component {
           auth: res.auth,
           user: res.data.user
         })
-      }).catch(err => console.log(err))
+      }).catch(err => console.log(err
+      ))
   }
 
   render () {
