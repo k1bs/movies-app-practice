@@ -81,7 +81,7 @@ class MovieList extends Component {
 
   render() {
     return (
-      <div className="movielist">
+      <div className="movielist fill">
         {this.state.auth
           ? <MovieForm isAdd={true} handleFormSubmit={this.handleFormSubmit} />
           : ''}
