@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
 class MovieList extends Component {
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.state = {
       movies:null,
       dataLoaded:false
