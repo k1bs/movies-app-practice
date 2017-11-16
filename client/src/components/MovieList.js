@@ -13,6 +13,7 @@ class MovieList extends Component {
     }
     this.handleFormSubmit = this.handleFormSubmit.bind(this)
     this.setEditing = this.setEditing.bind(this)
+    this.getAllMovies = this.getAllMovies.bind(this)
   }
 
   componentDidMount() {
@@ -25,7 +26,7 @@ class MovieList extends Component {
       .then(res => {
         this.setState({
           movies: res.data.movies,
-          dataLoaded:true,
+          dataLoaded: true,
         })
       }).catch(err => console.log(err))
   }
@@ -50,6 +51,9 @@ class MovieList extends Component {
     .then(res => {
       console.log(res)
       this.getAllMovies()
+      this.setState({
+        currentlyEditing: null
+      })
     }).catch(err => console.log(err))
   }
 
@@ -88,4 +92,3 @@ class MovieList extends Component {
 }
 
 export default MovieList
-
