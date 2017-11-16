@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from './components/Home'
+import MovieList from './components/MovieList'
 
 import Login from './components/Login'
 import Register from './components/Register'
@@ -109,6 +110,7 @@ class App extends Component {
                 ? <Redirect to='/dashboard' />
                 : <Register handleRegisterSubmit={this.handleRegisterSubmit} />
             )} />
+            <Route exact path='/movies' render={() => <MovieList auth={this.state.auth} />} />
           </div>
           <Footer />
         </div>
